@@ -1,3 +1,39 @@
+
+# next version (v1.0.0?)
+
+# ggalluvial 0.10.0
+
+## Lode guidance and ordering
+
+The lode guidance functions have been renamed as follows and their original names retained as aliases:
+
+| original  | renamed   |
+|-----------|-----------|
+| rightward | forward   |
+| leftward  | backward  |
+| rightleft | frontback |
+| leftright | backfront |
+
+Additionally, `lode.ordering` now accepts a single integer vector of length the number of cases (alluvia), and will use the vector to sort the lodes within strata at each axis.
+
+Finally, a new vignette showcases this and related functionality using a small example.
+
+## Defunct parameters
+
+The following parameters, deprecated in previous versions, are now defunct (with informative messages):
+
+- `weight` in the `stat_*()`s (replaced with `y`)
+- `aggregate.wts` in `stat_alluvium()` (replaced with `aggregate.y`)
+- `logical` in the `is_*_form()`s
+
+## Default geom layer parameters
+
+The `width` and `knot.pos` parameters sometimes required by `Geom*$setup_data()` are now set to the same defaults as in the `geom_*()`s when called from a stat. Previously-implemented warnings have been removed.
+
+## Custom lode guidance functions
+
+The `lode.guidance` argument of `stat_alluvial()` now accepts functions as input, making the use of custom functions easier as demonstrated in an example.
+
 # ggalluvial 0.9.2
 
 ## Height limits on strata
